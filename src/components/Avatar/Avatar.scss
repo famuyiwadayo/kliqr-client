@@ -1,0 +1,25 @@
+
+.kliqr-avatar {
+    border-radius: 100%;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+        width: inherit;
+        height: inherit;
+        object-fit: contain;
+    }
+
+    &.kliqr-avatar--small {
+        width: 48px;
+        height: 48px;
+    }
+
+    &.kliqr-avatar--large {
+        width: 96px;
+        height: 96px;
+    }
+}

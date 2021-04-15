@@ -1,0 +1,54 @@
+
+.kliqr-listItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 24px;
+    text-decoration: none;
+    color: black;
+
+    background: blanchedalmond;
+
+    .kliqr-listItem__info {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 12px;
+        flex: 1;
+
+        .kliqr-listItem__info__title {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .kliqr-listItem__info__description {
+            font-size: 0.7rem;
+            display: inline-flex;
+            align-items: center;
+
+            .dot {
+                margin: 0 5px;
+            }
+        }
+    }
+
+    .kliqr-listItem__arrow {
+        display: flex;
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 300ms ease-in-out;
+    }
+
+    &:hover {
+        .kliqr-listItem__arrow {
+            visibility: visible;
+            opacity: 1;
+            transform: scale(1);
+            transition: all 300ms ease-in-out;
+        }
+    }
+}
+
