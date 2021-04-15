@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { KliqrProvider } from './context/KliqrContext';
+import { ApolloProvider } from '@apollo/client';
+import { client } from './setup';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <KliqrProvider>
+        <App />
+      </KliqrProvider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

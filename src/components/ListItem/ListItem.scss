@@ -24,6 +24,7 @@
         }
 
         .kliqr-listItem__info__description {
+            font-weight: 300;
             font-size: 0.7rem;
             display: inline-flex;
             align-items: center;
@@ -35,6 +36,8 @@
     }
 
     .kliqr-listItem__arrow {
+        width: 14px;
+        height: 14px;
         display: flex;
         visibility: hidden;
         opacity: 0;
