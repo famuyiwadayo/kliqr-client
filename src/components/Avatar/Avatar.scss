@@ -1,25 +1,24 @@
-
 .kliqr-avatar {
-    border-radius: 100%;
-    background: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  border-radius: 100%;
+  // background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 
-    img {
-        width: inherit;
-        height: inherit;
-        object-fit: contain;
-    }
+  img {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+  }
 
-    &.kliqr-avatar--small {
-        width: 48px;
-        height: 48px;
-    }
+  &.kliqr-avatar--small {
+    width: 42px;
+    height: 42px;
+  }
 
-    &.kliqr-avatar--large {
-        width: 96px;
-        height: 96px;
-    }
+  &.kliqr-avatar--large {
+    width: 96px;
+    height: 96px;
+  }
 }
