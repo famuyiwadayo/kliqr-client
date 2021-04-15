@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { KliqrProvider } from './context/KliqrContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <KliqrProvider>
+      <App />
+    </KliqrProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
