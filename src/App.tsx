@@ -1,22 +1,15 @@
-import { useQuery } from '@apollo/client';
-import React from 'react';
-import './App.scss';
-import { Avatar, ListItem, TopBar } from './components';
-import { getUsers } from './queries';
+import { useQuery } from "@apollo/client";
+import React from "react";
+import "./App.scss";
+import { List, TopBar } from "./components";
 
 function App() {
-
-  const {data} = useQuery(getUsers)
-
-  console.log(data)
-
   return (
     <div className="kliqr-app">
-      <TopBar/>
+      <TopBar />
       <main>
-        {/* <List />
-        <Detail /> */}
-        main
+        <List />
+        {/* <Detail /> */}
       </main>
     </div>
   );

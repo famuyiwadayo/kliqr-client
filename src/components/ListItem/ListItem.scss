@@ -1,57 +1,65 @@
-
 .kliqr-listItem {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 8px 24px;
-    text-decoration: none;
-    color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 24px;
+  text-decoration: none;
+  color: black;
+  transition: all 300ms ease-in-out;
 
-    background: blanchedalmond;
+  cursor: pointer;
 
-    .kliqr-listItem__info {
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 12px;
-        flex: 1;
+  //   .kliqr-listItem__loader {
+  //   }
 
-        .kliqr-listItem__info__title {
-            margin: 0;
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 5px;
-        }
+  // background: blanchedalmond;
 
-        .kliqr-listItem__info__description {
-            font-weight: 300;
-            font-size: 0.7rem;
-            display: inline-flex;
-            align-items: center;
+  .kliqr-listItem__info {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 12px;
+    flex: 1;
 
-            .dot {
-                margin: 0 5px;
-            }
-        }
+    .kliqr-listItem__info__title {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 5px;
     }
+
+    .kliqr-listItem__info__description {
+      font-weight: 300;
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+
+      .dot {
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .kliqr-listItem__arrow {
+    width: 14px;
+    height: 14px;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 300ms ease-in-out;
+  }
+
+  &:hover,
+  &.kliqr-listItem--selected {
+    background: rgba(#e7eced, 0.5);
+    transition: all 300ms ease-in-out;
 
     .kliqr-listItem__arrow {
-        width: 14px;
-        height: 14px;
-        display: flex;
-        visibility: hidden;
-        opacity: 0;
-        transform: scale(0);
-        transition: all 300ms ease-in-out;
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+      transition: all 300ms ease-in-out;
     }
-
-    &:hover {
-        .kliqr-listItem__arrow {
-            visibility: visible;
-            opacity: 1;
-            transform: scale(1);
-            transition: all 300ms ease-in-out;
-        }
-    }
+  }
 }
-

@@ -1,0 +1,15 @@
+.kliqr-userList {
+  flex: 0.3;
+  overflow: scroll;
+  padding-bottom: 28px;
+  height: calc(100vh - var(--topBar-height));
+
+  .kliqr-userList__title {
+    font-weight: normal;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 20px 24px;
+    background: white;
+  }
+}
