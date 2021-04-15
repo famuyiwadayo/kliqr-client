@@ -1,12 +1,23 @@
+import { useQuery } from '@apollo/client';
 import React from 'react';
-import { Avatar, ListItem } from './components';
+import './App.scss';
+import { Avatar, ListItem, TopBar } from './components';
+import { getUsers } from './queries';
 
 function App() {
+
+  const {data} = useQuery(getUsers)
+
+  console.log(data)
+
   return (
     <div className="kliqr-app">
-      <Avatar size="large" src="https://randomuser.me/api/portraits/men/17.jpg" />
-
-      <ListItem />
+      <TopBar/>
+      <main>
+        {/* <List />
+        <Detail /> */}
+        main
+      </main>
     </div>
   );
 }
