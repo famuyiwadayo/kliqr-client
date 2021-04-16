@@ -25,7 +25,8 @@ export const GET_USERS_WITH_TX_COUNT = gql`
 `;
 
 const useGetUsersWithTxCount = () => {
-  const { setSelectedId } = useContext(KliqrContext);
+  const { setSelectedId, setDetailLoading } = useContext(KliqrContext);
+  setDetailLoading(true);
   let result: IGetUsersWithTxCount[] = [];
   const { data, loading } = useQuery(GET_USERS_WITH_TX_COUNT, {
     onCompleted: (data) => setSelectedId(data.getUsersWithTxCount[0].id),

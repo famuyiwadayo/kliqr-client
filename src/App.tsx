@@ -1,7 +1,6 @@
-import { useQuery } from "@apollo/client";
 import React from "react";
 import "./App.scss";
-import { List, TopBar } from "./components";
+import { Detail, List, TopBar } from "./components";
 
 function App() {
   return (
@@ -9,7 +8,7 @@ function App() {
       <TopBar />
       <main>
         <List />
-        {/* <Detail /> */}
+        <Detail />
       </main>
     </div>
   );
