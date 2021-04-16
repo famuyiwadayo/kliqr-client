@@ -1,0 +1,27 @@
+.kliqr-basicInfo {
+  margin-top: 43px;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .kliqr-basicInfo__title {
+    margin: 0;
+    line-height: 40.98px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  .kliqr-basicInfo__description {
+    font-weight: 300;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+
+    .dot {
+      margin: 0 5px;
+    }
+  }
+}

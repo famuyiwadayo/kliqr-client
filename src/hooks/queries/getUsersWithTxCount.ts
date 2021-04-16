@@ -1,15 +1,16 @@
 import { gql, useQuery } from "@apollo/client";
 import { useContext } from "react";
 import { KliqrContext } from "../../context/KliqrContext";
+import { UserRo } from "../../interfaces";
 
-interface IGetUsersWithTxCount {
-  id: number;
-  total_transactions: number;
-  first_name: string;
-  last_name: string;
-  avatar: string;
-  created_at: string;
-}
+// interface IGetUsersWithTxCount {
+//   id: number;
+//   total_transactions: number;
+//   first_name: string;
+//   last_name: string;
+//   avatar: string;
+//   created_at: string;
+// }
 
 export const GET_USERS_WITH_TX_COUNT = gql`
   {
@@ -25,8 +26,9 @@ export const GET_USERS_WITH_TX_COUNT = gql`
 `;
 
 const useGetUsersWithTxCount = () => {
-  const { setSelectedId } = useContext(KliqrContext);
-  let result: IGetUsersWithTxCount[] = [];
+  const { setSelectedId, setDetailLoading } = useContext(KliqrContext);
+  setDetailLoading(true);
+  let result: UserRo[] = [];
   const { data, loading } = useQuery(GET_USERS_WITH_TX_COUNT, {
     onCompleted: (data) => setSelectedId(data.getUsersWithTxCount[0].id),
   });

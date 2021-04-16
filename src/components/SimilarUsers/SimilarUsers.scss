@@ -1,0 +1,17 @@
+.kliqr-similarUsers {
+  flex: 1.1;
+
+  .kliqr-similarUsers__title {
+    line-height: 20.49px;
+    font-size: 0.99rem;
+    font-weight: 500;
+    margin: 18px 0;
+  }
+
+  .kliqr-similarUsers__list {
+    max-height: 190px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    overflow: scroll;
+  }
+}

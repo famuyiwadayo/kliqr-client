@@ -54,6 +54,9 @@
   &.kliqr-listItem--selected {
     background: rgba(#e7eced, 0.5);
     transition: all 300ms ease-in-out;
+    position: sticky;
+    // top: 60px;
+    // z-index: 9999;
 
     .kliqr-listItem__arrow {
       visibility: visible;
