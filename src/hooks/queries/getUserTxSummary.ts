@@ -1,13 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-// import { useContext } from "react";
-// import { KliqrContext } from "../../context/KliqrContext";
-// import { debounce } from "lodash";
-
-interface IGetUserTransactionSummary {
-  spent: number;
-  income: number;
-  total: number;
-}
+import { TransactionSummaryRo } from "../../interfaces";
 
 export const GET_USER_TRANSACTION_SUMMARY = gql`
   query getUserTransactionSummary($id: Int!) {
@@ -20,7 +12,7 @@ export const GET_USER_TRANSACTION_SUMMARY = gql`
 `;
 
 const useGetUserTxSummary = (userId: number) => {
-  let result: IGetUserTransactionSummary = {} as any;
+  let result: TransactionSummaryRo = {} as any;
   const { data, loading } = useQuery(GET_USER_TRANSACTION_SUMMARY, {
     variables: { id: userId },
   });

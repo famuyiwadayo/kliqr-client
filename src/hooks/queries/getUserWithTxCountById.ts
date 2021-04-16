@@ -1,16 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-// import { useContext } from "react";
-// import { KliqrContext } from "../../context/KliqrContext";
-// import { debounce } from "lodash";
-
-interface IGetUsersWithTxCount {
-  id: number;
-  total_transactions: number;
-  first_name: string;
-  last_name: string;
-  avatar: string;
-  created_at: string;
-}
+import { UserRo } from "../../interfaces";
 
 export const GET_USERS_WITH_TX_COUNT = gql`
   query getUserDetail($id: Int!) {
@@ -27,7 +16,7 @@ export const GET_USERS_WITH_TX_COUNT = gql`
 
 const useGetUserWithTxCountById = (userId: number) => {
   //   const { setDetailLoading } = useContext(KliqrContext);
-  let result: IGetUsersWithTxCount = {} as any;
+  let result: UserRo = {} as any;
   const { data, loading } = useQuery(GET_USERS_WITH_TX_COUNT, {
     variables: { id: userId },
   });

@@ -15,6 +15,7 @@ interface ListItemProps {
   last_name?: string;
   total_transactions?: string | number;
   avatar?: string;
+  disableArrow?: boolean;
   created_at?: string;
 }
 
@@ -26,6 +27,7 @@ const ListItem: FC<ListItemProps> = (props) => {
     total_transactions,
     avatar,
     created_at,
+    disableArrow,
   } = props;
 
   const { setDetailLoading, setSelectedId, selectedId } = useContext(
@@ -63,9 +65,11 @@ const ListItem: FC<ListItemProps> = (props) => {
           </span>
         </span>
       </div>
-      <span className="kliqr-listItem__arrow">
-        <Arrow />
-      </span>
+      {!disableArrow && (
+        <span className="kliqr-listItem__arrow">
+          <Arrow />
+        </span>
+      )}
     </a>
   );
 };

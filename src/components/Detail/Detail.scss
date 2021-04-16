@@ -6,4 +6,13 @@
   align-items: center;
 
   //   background: #eee;
+
+  .kliqr-userDetail__section {
+    display: inline-flex;
+    margin-top: 75px;
+    // max-width: calc(100% - 107px);
+    padding: 0 50px;
+    width: 100%;
+    flex: 1;
+  }
 }
