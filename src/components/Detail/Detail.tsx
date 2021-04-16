@@ -29,8 +29,6 @@ const Detail = () => {
     +selectedId
   );
 
-  console.log("Loading state", similar);
-
   return (
     <div className="kliqr-userDetail">
       <BasicInfo {...basic} loading={basicLoading} />
