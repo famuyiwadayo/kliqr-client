@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-import { UserRo, UserTopFiveCategories } from "../../interfaces";
+import { UserTopFiveCategories } from "../../interfaces";
 
 export const GET_USER_TOP_FIVE_CATEGORIES = gql`
   query getUserTopFiveCategoriesById($id: Int!) {

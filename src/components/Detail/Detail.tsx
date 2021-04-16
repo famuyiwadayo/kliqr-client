@@ -1,4 +1,3 @@
-import Avatar from "../Avatar/Avatar";
 import "./Detail.scss";
 import {
   useGetTopFiveCategories,
@@ -8,11 +7,11 @@ import {
 } from "../../hooks";
 import { useContext } from "react";
 import { KliqrContext } from "../../context/KliqrContext";
-import { BasicInfo, BasicInfoSkeleton, SimilarUsers, ValuesCard } from "..";
+import { BasicInfo, SimilarUsers, ValuesCard } from "..";
 import TopFiveCategories from "../TopFiveCategories/TopFiveCategories";
 
 const Detail = () => {
-  const { selectedId, detailLoading } = useContext(KliqrContext);
+  const { selectedId } = useContext(KliqrContext);
   const { result: basic, loading: basicLoading } = useGetUserWithTxCountById(
     +selectedId
   );

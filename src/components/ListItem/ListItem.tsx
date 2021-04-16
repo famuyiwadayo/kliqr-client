@@ -30,21 +30,15 @@ const ListItem: FC<ListItemProps> = (props) => {
     disableArrow,
   } = props;
 
-  const { setDetailLoading, setSelectedId, selectedId } = useContext(
-    KliqrContext
-  );
+  const { setSelectedId, selectedId } = useContext(KliqrContext);
 
   const _classnames = classNames("kliqr-listItem", {
     "kliqr-listItem--selected": selectedId === id,
   });
 
-  const handleClick = useCallback(
-    (id: number) => {
-      setDetailLoading(true);
-      setSelectedId(id);
-    },
-    [setSelectedId]
-  );
+  const handleClick = useCallback((id: number) => setSelectedId(id), [
+    setSelectedId,
+  ]);
 
   return (
     <a onClick={() => handleClick(id ?? 0)} className={_classnames}>
