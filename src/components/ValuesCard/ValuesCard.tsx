@@ -67,7 +67,7 @@ const ValuesCard: FC<ValuesCardProps> = (props) => {
       {checkLoading() &&
         Array(3)
           .fill(0)
-          .map(() => <CardSkeleton />)}
+          .map((_, i) => <CardSkeleton key={i} />)}
     </div>
   );
 };

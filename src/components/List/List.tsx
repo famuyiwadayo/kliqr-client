@@ -10,11 +10,14 @@ const List = () => {
   return (
     <div className="kliqr-userList">
       <h4 className="kliqr-userList__title">USERS</h4>
-      {!loading && result.map((r) => <ListItem {...r} />)}
+      {!loading && result.length < 1 && (
+        <span style={{ padding: "20px" }}>no users or bad network</span>
+      )}
+      {!loading && result.map((r, i) => <ListItem key={i} {...r} />)}
       {loading &&
         Array(10)
           .fill(0)
-          .map((r) => <ListItemSkeleton />)}
+          .map((_, i) => <ListItemSkeleton key={i} />)}
     </div>
   );
 };

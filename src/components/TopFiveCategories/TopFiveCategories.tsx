@@ -39,9 +39,17 @@ const TopFiveCategories: FC<TopFiveCategoriesProps> = (props) => {
       <div className="kliqr-topFiveCategories__title">RECURRING EXPENSES</div>
 
       <div className="kliqr-topFiveCategories__list">
-        {categories?.map((category) => (
-          <CategoryIcon src={category.icon_url} alt={category.category} />
+        {categories?.map((category, i) => (
+          <CategoryIcon
+            key={i}
+            src={category.icon_url}
+            alt={category.category}
+          />
         ))}
+
+        {categories?.length! < 1 && (
+          <span style={{ color: "#ccc" }}>no recurring expenses</span>
+        )}
       </div>
     </div>
   ) : (
@@ -59,8 +67,8 @@ const TopFiveCategoriesSkeleton = () => {
       <div className="kliqr-topFiveCategories__list">
         {Array(5)
           .fill(0)
-          .map(() => (
-            <CategoryIconSkeleton />
+          .map((_, i) => (
+            <CategoryIconSkeleton key={i} />
           ))}
       </div>
     </div>
