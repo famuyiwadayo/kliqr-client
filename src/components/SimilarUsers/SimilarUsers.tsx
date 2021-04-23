@@ -23,9 +23,13 @@ const SimilarUsers: FC<SimilarUsersProps> = (props) => {
       </div>
 
       <div className="kliqr-similarUsers__list">
-        {users?.map((user) => (
-          <ListItem {...user} disableArrow />
+        {users?.map((user, i) => (
+          <ListItem key={i} {...user} disableArrow />
         ))}
+
+        {users?.length! < 1 && (
+          <span style={{ color: "#ccc" }}>no similar users</span>
+        )}
       </div>
     </div>
   ) : (
@@ -43,8 +47,8 @@ const SimilarUsersSkelenton = () => {
       <div className="kliqr-similarUsers__list">
         {Array(3)
           .fill(0)
-          .map(() => (
-            <ListItemSkeleton />
+          .map((_, i) => (
+            <ListItemSkeleton key={i} />
           ))}
       </div>
     </div>
